@@ -3,4 +3,4 @@ osx_image: xcode8.2
 xcode_project: SJJSONTable.xcodeproj
 xcode_scheme: SJJSONTableTests
 script:
-    - xcodebuild clean build -sdk iphonesimulator -workspace SJJSONTable.xcodeproj -scheme SJJSONTableTests CODE_SIGNING_REQUIRED=NO
+    - xcodebuild clean build -sdk iphonesimulator -xcodeproj SJJSONTable.xcodeproj -scheme SJJSONTableTests CODE_SIGNING_REQUIRED=NO
