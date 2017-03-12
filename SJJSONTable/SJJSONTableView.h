@@ -13,7 +13,7 @@
 
 @protocol SJJSONTableViewDelegate <NSObject>
 
-- (JSONCell *)tableView:(UITableView *)tableView cellForEntry:(id)entry;
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForEntry:(id)entry;
 - (NSInteger)tableView:(UITableView *)tableView childrenOfEntry:(id)entry;
 - (id)tableView:(UITableView *)tableView child:(NSInteger)child ofEntry:(id)entry;
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;

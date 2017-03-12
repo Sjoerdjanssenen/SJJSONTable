@@ -48,10 +48,10 @@
     return [self.items count];
 }
 
-- (JSONCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     Node *node = [self.items objectAtIndex:indexPath.row];
     
-    return (JSONCell *)[self.presenter tableView:tableView cellForEntry:node.item];
+    return [self.presenter tableView:tableView cellForEntry:node.item];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -104,8 +104,6 @@
 }
 
 - (void)deleteRowsForNode:(Node *)node indexPath:(NSIndexPath *)indexPath {
-    NSInteger rows = [self.presenter tableView:self childrenOfEntry:node.item];
-    
     NSMutableArray *indexPaths = [@[] mutableCopy];
     BOOL result = false; int i = (indexPath.row+1);
     

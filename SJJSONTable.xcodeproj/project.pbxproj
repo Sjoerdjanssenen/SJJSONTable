@@ -13,7 +13,6 @@
 		89394BC31E72075A00B40FAE /* SJJSONTableView.h in Headers */ = {isa = PBXBuildFile; fileRef = 89394BC11E72075A00B40FAE /* SJJSONTableView.h */; };
 		89394BC41E72075A00B40FAE /* SJJSONTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 89394BC21E72075A00B40FAE /* SJJSONTableView.m */; };
 		89394BC71E72078F00B40FAE /* JSONCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 89394BC51E72078F00B40FAE /* JSONCell.h */; };
-		89394BC81E72078F00B40FAE /* JSONCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 89394BC61E72078F00B40FAE /* JSONCell.m */; };
 		89394BD11E72088500B40FAE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 89394BD01E72088500B40FAE /* main.m */; };
 		89394BD41E72088500B40FAE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 89394BD31E72088500B40FAE /* AppDelegate.m */; };
 		89394BD71E72088500B40FAE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89394BD61E72088500B40FAE /* ViewController.m */; };
@@ -46,8 +45,8 @@
 		89394BB71E72073700B40FAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		89394BC11E72075A00B40FAE /* SJJSONTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJJSONTableView.h; sourceTree = "<group>"; };
 		89394BC21E72075A00B40FAE /* SJJSONTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJJSONTableView.m; sourceTree = "<group>"; };
-		89394BC51E72078F00B40FAE /* JSONCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONCell.h; sourceTree = "<group>"; };
-		89394BC61E72078F00B40FAE /* JSONCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONCell.m; sourceTree = "<group>"; };
+		89394BC51E72078F00B40FAE /* JSONCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSONCell.h; path = ../SJJSONTable/JSONCell.h; sourceTree = "<group>"; };
+		89394BC61E72078F00B40FAE /* JSONCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JSONCell.m; path = ../SJJSONTable/JSONCell.m; sourceTree = "<group>"; };
 		89394BCD1E72088500B40FAE /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89394BD01E72088500B40FAE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		89394BD21E72088500B40FAE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -117,8 +116,6 @@
 				89394BC21E72075A00B40FAE /* SJJSONTableView.m */,
 				89394BEA1E74897B00B40FAE /* Node.h */,
 				89394BEB1E74897B00B40FAE /* Node.m */,
-				89394BC51E72078F00B40FAE /* JSONCell.h */,
-				89394BC61E72078F00B40FAE /* JSONCell.m */,
 			);
 			path = SJJSONTable;
 			sourceTree = "<group>";
@@ -135,6 +132,8 @@
 		89394BCE1E72088500B40FAE /* Example */ = {
 			isa = PBXGroup;
 			children = (
+				89394BC51E72078F00B40FAE /* JSONCell.h */,
+				89394BC61E72078F00B40FAE /* JSONCell.m */,
 				89394BD21E72088500B40FAE /* AppDelegate.h */,
 				89394BD31E72088500B40FAE /* AppDelegate.m */,
 				89394BD51E72088500B40FAE /* ViewController.h */,
@@ -305,7 +304,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				89394BC41E72075A00B40FAE /* SJJSONTableView.m in Sources */,
-				89394BC81E72078F00B40FAE /* JSONCell.m in Sources */,
 				89394BED1E74897B00B40FAE /* Node.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

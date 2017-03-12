@@ -35,22 +35,7 @@
         self.title = [[UILabel alloc] initWithFrame:CGRectMake(30, 0, 100, 44)];
         [self addSubview:self.title];
         
-        self.type = [[UIImageView alloc] initWithFrame:CGRectMake(self.frame.size.width-145, (self.frame.size.height-25)/2, 25, 25)];
-        self.type.layer.borderColor = [[UIColor blackColor] CGColor];
-        self.type.layer.borderWidth = 1.0f;
-        self.type.layer.cornerRadius = 5.0f;
-        if (self.valueType == TextValue) {
-            self.type.image = [[UIImage imageNamed:@"letter"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-        } else if (self.valueType == ArrayValue) {
-            self.type.image = [[UIImage imageNamed:@"array"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-        } else if (self.valueType == DictionaryValue) {
-            self.type.image = [[UIImage imageNamed:@"dictionary"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-        } else if (self.valueType == NumberValue) {
-            self.type.image = [[UIImage imageNamed:@"number"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-        }
-        [self addSubview:self.type];
-        
-        self.detail = [[UILabel alloc] initWithFrame:CGRectMake(self.frame.size.width-110, 0, 100, 44)];
+        self.detail = [[UILabel alloc] initWithFrame:CGRectMake(self.frame.size.width-145, 0, 100, 44)];
         [self addSubview:self.detail];
         
         [self setLevel:level frame:self.frame];
