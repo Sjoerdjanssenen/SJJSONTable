@@ -6,6 +6,6 @@
 
 A UITableView implementation specifically meant for displaying JSON or trees.
 
-![An Example app](http://imgur.com/a/ntdzS.gif)
+![An example app](http://i.imgur.com/o4NRI1m.gifv)
 
 Arrow icon in the example project made by [Dave Gandy](http://www.flaticon.com/authors/dave-gandy) from www.flaticon.com 
