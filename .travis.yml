@@ -1,4 +1,4 @@
 language: objective-c
 osx_image: xcode8.2
 xcode_project: SJJSONTable.xcodeproj
-xcode_scheme: SJJSONTable
+xcode_scheme: SJJSONTableTests
