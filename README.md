@@ -28,42 +28,81 @@ SJJSONTable is a subclass of UITableViewCell that provides you with APIs to disp
 ## Installation
 
 #### CocoaPods
-You can use [CocoaPods](http://cocoapods.org/) to install `YourLibrary` by adding it to your `Podfile`:
+You can use [CocoaPods](http://cocoapods.org/) to install `SJJSONTable` by adding it to your `Podfile`:
 
 ```ruby
 platform :ios, '8.0'
 use_frameworks!
-pod 'YourLibrary'
+pod 'SJJSONTable'
 ```
 
 To get the full benefits import `YourLibrary` wherever you import UIKit
 
 ``` swift
 import UIKit
-import YourLibrary
+import SJJSONTable
 ```
-#### Carthage
-Create a `Cartfile` that lists the framework and run `carthage update`. Follow the [instructions](https://github.com/Carthage/Carthage#if-youre-building-for-ios) to add `$(SRCROOT)/Carthage/Build/iOS/YourLibrary.framework` to an iOS project.
 
+## Getting started
+
+You can start by creating a `SJJSONTable` - just as you do with a `UITableView`.
+
+```objective-c
+SJJSONTable *table = [[SJJSONTable alloc] init];
+table.presenter = self;
+[self.view addSubview:table];
 ```
-github "yourUsername/yourlibrary"
-```
-#### Manually
-1. Download and drop ```YourLibrary.swift``` in your project.  
-2. Congratulations!  
 
-## Usage example
+After that, you can add the APIs required to make the table work. First, set the amount of children for a given node. If node is nil, it's the root.
 
-```swift
-import EZSwiftExtensions
-ez.detectScreenShot { () -> () in
-    print("User took a screen shot")
+```objective-c
+- (NSInteger)tableView:(UITableView *)tableView childrenOfEntry:(id)node {
+    return (node == nil) ? 5 : 3;
 }
 ```
 
+After adding that method, you can start returning children for a given node.
+
+```objective-c
+- (id)tableView:(UITableView *)tableView child:(NSInteger)child ofEntry:(id)node {
+    if (node == nil) {
+        return [self.data objectAtIndex:child];
+    }
+    
+    return [node.children objectAtIndex:child];
+}
+```
+
+Then create the cell for a node.
+
+```objective-c
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForEntry:(id)node  {
+    ....
+    return cell;
+}
+```
+
+And handle the selection, collapsing and/or expanding of nodes.
+
+```objective-c
+- (void)tableView:(UITableView *)tableView didSelectNode:(id)node {
+    NSLog(@"Selected node: %@", node);
+}
+
+- (void)willExpandNodeAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"Will expand node at indexPath: %@", indexPath);
+}
+
+- (void)willCollapseNodeAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"Will collapse node at indexPath: %@", indexPath);
+}
+```
+
+You're done!
+
 ## Contribute
 
-We would love for you to contribute to **YourLibraryName**, check the ``LICENSE`` file for more info.
+We would love for you to contribute to **SJJSONTable**, check the ``LICENSE`` file for more info.
 
 ## Meta
 
@@ -73,7 +112,7 @@ Distributed under the MIT license. See ``LICENSE`` for more information.
 
 Arrow icon in the example project made by [Dave Gandy](http://www.flaticon.com/authors/dave-gandy) from www.flaticon.com 
 
-[https://github.com/yourname/github-link](https://github.com/dbader/)
+[https://github.com/sjoerdjanssenen](https://github.com/sjoerdjanssenen/)
 
 [swift-image]:https://img.shields.io/badge/swift-3.0-orange.svg
 [swift-url]: https://swift.org/
