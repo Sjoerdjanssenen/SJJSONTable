@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SJJSONTableView.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <SJJSONTableViewDelegate>
 
 
 @end

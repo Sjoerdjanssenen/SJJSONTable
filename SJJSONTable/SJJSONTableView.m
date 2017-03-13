@@ -7,7 +7,7 @@
 //
 
 #import "SJJSONTableView.h"
-#import "Node.h"
+#import "SJJSONTableNode.h"
 
 @interface SJJSONTableView ()
 
@@ -31,6 +31,12 @@
         self.tableFooterView = footerView;
     }
     return self;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    Node *node = [self.items objectAtIndex:indexPath.row];
+    
+    return [self.presenter tableView:self heightForNode:node.item];
 }
 
 - (void)setPresenter:(id)presenter {
@@ -63,14 +69,16 @@
     if (children > 0) {
         if (node.expanded) {
             [self deleteRowsForNode:node indexPath:indexPath];
+            [self.presenter willCollapseNodeAtIndexPath:indexPath];
         } else {
             [self insertRowsForNode:node indexPath:indexPath];
+            [self.presenter willExpandNodeAtIndexPath:indexPath];
         }
         
         [node setExpanded:!node.expanded];
     }
     
-    [self.presenter tableView:self didSelectRowAtIndexPath:indexPath];
+    [self.presenter tableView:self didSelectNode:node.item];
 }
 
 - (NSInteger)depthForItem:(id)item {
@@ -90,13 +98,13 @@
     
     for (int i = 0; i < rows; i++) {
         Node *entry = [[Node alloc] initWithItem:[self.presenter tableView:self child:i ofEntry:node.item]
-                                          depth:node.depth+1];
+                                           depth:node.depth+1];
         [self.items insertObject:entry atIndex:indexPath.row+i+1];
     }
     
     NSMutableArray *indexPaths = [@[] mutableCopy];
     
-    for (int i = (indexPath.row+1); i < (rows+(indexPath.row+1)); i++) {
+    for (int i = ((int)indexPath.row+1); i < (rows+(indexPath.row+1)); i++) {
         [indexPaths addObject:[NSIndexPath indexPathForRow:i inSection:0]];
     }
     
@@ -105,7 +113,7 @@
 
 - (void)deleteRowsForNode:(Node *)node indexPath:(NSIndexPath *)indexPath {
     NSMutableArray *indexPaths = [@[] mutableCopy];
-    BOOL result = false; int i = (indexPath.row+1);
+    BOOL result = false; int i = ((int)indexPath.row+1);
     
     while (result == false) {
         Node *temp = [self.items objectAtIndex:indexPath.row+1];

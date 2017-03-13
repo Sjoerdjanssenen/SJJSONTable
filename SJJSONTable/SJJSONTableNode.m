@@ -1,12 +1,12 @@
 //
-//  Node.m
+//  SJJSONTableNode.m
 //  SJJSONTable
 //
 //  Created by Sjoerd Janssen on 3/11/17.
 //  Copyright © 2017 Sjoerd Janssen. All rights reserved.
 //
 
-#import "Node.h"
+#import "SJJSONTableNode.h"
 
 @interface Node()
 

@@ -1,5 +1,5 @@
 //
-//  Node.h
+//  SJJSONTableNode.h
 //  SJJSONTable
 //
 //  Created by Sjoerd Janssen on 3/11/17.

@@ -13,10 +13,13 @@
 
 @protocol SJJSONTableViewDelegate <NSObject>
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForEntry:(id)entry;
-- (NSInteger)tableView:(UITableView *)tableView childrenOfEntry:(id)entry;
-- (id)tableView:(UITableView *)tableView child:(NSInteger)child ofEntry:(id)entry;
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForNode:(id)node;
+- (NSInteger)tableView:(UITableView *)tableView childrenOfNode:(id)node;
+- (id)tableView:(UITableView *)tableView child:(NSInteger)child ofNode:(id)node;
+- (void)tableView:(UITableView *)tableView didSelectNode:(id)node;
+- (void)willExpandNodeAtIndexPath:(NSIndexPath *)indexPath;
+- (void)willCollapseNodeAtIndexPath:(NSIndexPath *)indexPath;
+- (CGFloat)tableView:(UITableView *)tableView heightForNode:(id)node;
 
 @end
 

@@ -7,7 +7,6 @@
 //
 
 #import "ViewController.h"
-#import "SJJSONTableView.h"
 
 @interface ViewController ()
 
@@ -52,42 +51,54 @@
     [self.view addSubview:self.tableView];
 }
 
-- (NSInteger)tableView:(UITableView *)tableView childrenOfEntry:(id)entry {
-    if (entry == nil) {
+- (CGFloat)tableView:(UITableView *)tableView heightForNode:(id)node {
+    return 44.0f;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView childrenOfNode:(id)node {
+    if (node == nil) {
         return [self.items count];
     }
     
-    return [[entry objectAtIndex:1] count];
+    return [[node objectAtIndex:1] count];
 }
 
-- (id)tableView:(UITableView *)tableView child:(NSInteger)child ofEntry:(id)entry {
-    if (entry == nil) {
+- (id)tableView:(UITableView *)tableView child:(NSInteger)child ofNode:(id)node {
+    if (node == nil) {
         return [self.items objectAtIndex:child];
     }
     
-    return [[entry objectAtIndex:1] objectAtIndex:child];
+    return [[node objectAtIndex:1] objectAtIndex:child];
 }
 
-- (JSONCell *)tableView:(UITableView *)tableView cellForEntry:(id)entry {
+- (JSONCell *)tableView:(UITableView *)tableView cellForNode:(id)node {
     JSONCell *cell;
 
-    if ([[entry objectAtIndex:1] isKindOfClass:[NSArray class]]) {
-        cell = [[JSONCell alloc] initWithLevel:[self.tableView depthForItem:entry] valueType:ArrayValue];
-        cell.title.text = [entry objectAtIndex:0];
-        cell.detail.text = [NSString stringWithFormat:@"%d items", [[entry objectAtIndex:1] count]];
+    if ([[node objectAtIndex:1] isKindOfClass:[NSArray class]]) {
+        cell = [[JSONCell alloc] initWithLevel:[self.tableView depthForItem:node] valueType:ArrayValue];
+        cell.title.text = [node objectAtIndex:0];
+        cell.detail.text = [NSString stringWithFormat:@"%d items", [[node objectAtIndex:1] count]];
     } else {
-        cell = [[JSONCell alloc] initWithLevel:[self.tableView depthForItem:entry] valueType:TextValue];
-        cell.title.text = [entry objectAtIndex:0];
-        cell.detail.text = [entry objectAtIndex:1];
+        cell = [[JSONCell alloc] initWithLevel:[self.tableView depthForItem:node] valueType:TextValue];
+        cell.title.text = [node objectAtIndex:0];
+        cell.detail.text = [node objectAtIndex:1];
     }
     
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    JSONCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-    
-    [cell setExpanded:!cell.expanded];
+- (void)willExpandNodeAtIndexPath:(NSIndexPath *)indexPath {
+    JSONCell *cell = [self cellForRowAtIndexPath:indexPath];
+    [cell setExpanded:YES];
+}
+
+- (void)willCollapseNodeAtIndexPath:(NSIndexPath *)indexPath {
+    JSONCell *cell = [self cellForRowAtIndexPath:indexPath];
+    [cell setExpanded:NO];
+}
+
+- (void)tableView:(UITableView *)tableView didSelectNode:(id)node {
+    NSLog(@"Selected a node!");
 }
 
 - (void)didReceiveMemoryWarning {

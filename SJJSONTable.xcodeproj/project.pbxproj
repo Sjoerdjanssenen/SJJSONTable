@@ -21,9 +21,9 @@
 		89394BDF1E72088500B40FAE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89394BDD1E72088500B40FAE /* LaunchScreen.storyboard */; };
 		89394BE41E7209A700B40FAE /* SJJSONTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 89394BC21E72075A00B40FAE /* SJJSONTableView.m */; };
 		89394BE51E7209AA00B40FAE /* JSONCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 89394BC61E72078F00B40FAE /* JSONCell.m */; };
-		89394BEC1E74897B00B40FAE /* Node.h in Headers */ = {isa = PBXBuildFile; fileRef = 89394BEA1E74897B00B40FAE /* Node.h */; };
-		89394BED1E74897B00B40FAE /* Node.m in Sources */ = {isa = PBXBuildFile; fileRef = 89394BEB1E74897B00B40FAE /* Node.m */; };
-		89394BEE1E748D6000B40FAE /* Node.m in Sources */ = {isa = PBXBuildFile; fileRef = 89394BEB1E74897B00B40FAE /* Node.m */; };
+		89394BEC1E74897B00B40FAE /* SJJSONTableNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 89394BEA1E74897B00B40FAE /* SJJSONTableNode.h */; };
+		89394BED1E74897B00B40FAE /* SJJSONTableNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 89394BEB1E74897B00B40FAE /* SJJSONTableNode.m */; };
+		89394BEE1E748D6000B40FAE /* SJJSONTableNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 89394BEB1E74897B00B40FAE /* SJJSONTableNode.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,8 +57,8 @@
 		89394BDB1E72088500B40FAE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		89394BDE1E72088500B40FAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89394BE01E72088500B40FAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		89394BEA1E74897B00B40FAE /* Node.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Node.h; sourceTree = "<group>"; };
-		89394BEB1E74897B00B40FAE /* Node.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Node.m; sourceTree = "<group>"; };
+		89394BEA1E74897B00B40FAE /* SJJSONTableNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJJSONTableNode.h; sourceTree = "<group>"; };
+		89394BEB1E74897B00B40FAE /* SJJSONTableNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJJSONTableNode.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,8 +114,8 @@
 				89394BAB1E72073700B40FAE /* Info.plist */,
 				89394BC11E72075A00B40FAE /* SJJSONTableView.h */,
 				89394BC21E72075A00B40FAE /* SJJSONTableView.m */,
-				89394BEA1E74897B00B40FAE /* Node.h */,
-				89394BEB1E74897B00B40FAE /* Node.m */,
+				89394BEA1E74897B00B40FAE /* SJJSONTableNode.h */,
+				89394BEB1E74897B00B40FAE /* SJJSONTableNode.m */,
 			);
 			path = SJJSONTable;
 			sourceTree = "<group>";
@@ -164,7 +164,7 @@
 			files = (
 				89394BB81E72073700B40FAE /* SJJSONTable.h in Headers */,
 				89394BC71E72078F00B40FAE /* JSONCell.h in Headers */,
-				89394BEC1E74897B00B40FAE /* Node.h in Headers */,
+				89394BEC1E74897B00B40FAE /* SJJSONTableNode.h in Headers */,
 				89394BC31E72075A00B40FAE /* SJJSONTableView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -304,7 +304,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				89394BC41E72075A00B40FAE /* SJJSONTableView.m in Sources */,
-				89394BED1E74897B00B40FAE /* Node.m in Sources */,
+				89394BED1E74897B00B40FAE /* SJJSONTableNode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,7 +325,7 @@
 				89394BD41E72088500B40FAE /* AppDelegate.m in Sources */,
 				89394BE41E7209A700B40FAE /* SJJSONTableView.m in Sources */,
 				89394BD11E72088500B40FAE /* main.m in Sources */,
-				89394BEE1E748D6000B40FAE /* Node.m in Sources */,
+				89394BEE1E748D6000B40FAE /* SJJSONTableNode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
