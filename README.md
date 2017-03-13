@@ -14,11 +14,10 @@ SJJSONTable is a subclass of UITableViewCell that provides you with APIs to disp
 
 ## Features
 
-- [x] Feature 1
-- [x] Feature 2
-- [x] Feature 3
-- [x] Feature 4
-- [x] Feature 5
+- [x] Expanding/collapsing of nodes and their children.
+- [x] Support for all UITableView APIs
+- [ ] Reordering
+- [ ] Search
 
 ## Requirements
 
@@ -36,11 +35,10 @@ use_frameworks!
 pod 'SJJSONTable'
 ```
 
-To get the full benefits import `YourLibrary` wherever you import UIKit
+Import `SJJSONTable` where you'd like to use it.
 
-``` swift
-import UIKit
-import SJJSONTable
+``` objective-c
+#import <SJJSONTable/SJJSONTable.h>
 ```
 
 ## Getting started
